@@ -291,11 +291,28 @@
   .rc-name { font-weight: 700; font-size: 16px; }
   .rc-prices { display: flex; flex-direction: column; gap: 5px; }
   .rc-price-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; }
-  .rc-price-label { color: var(--muted); }
-  .rc-price-val { font-weight: 600; color: var(--ink); }
+  .rc-price-label { color: var(--muted); white-space: nowrap; }
+  .rc-price-val { font-weight: 600; color: var(--ink); white-space: nowrap; }
   .rc-price-val.main { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
   .rc-divider { height: 1px; background: var(--line-2); margin: 2px 0; }
   .rc-note { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+  .rc-photo {
+    border-radius: 10px; overflow: hidden;
+    aspect-ratio: 16/9; position: relative;
+    background: var(--bg-alt);
+  }
+  .rc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .rc-photo svg { width: 100%; height: 100%; display: block; }
+
+  /* виджет внутри статьи (без border-top) */
+  .widget-inline {
+    margin: 40px 0;
+    padding: 32px 28px;
+    background: var(--bg-alt);
+    border-radius: 18px;
+  }
+  .widget-inline .ws-title { font-size: 18px; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 4px; }
+  .widget-inline .ws-sub { font-size: 14px; color: var(--muted); margin: 0 0 20px; }
   .rc-btn {
     display: flex; align-items: center; justify-content: center; gap: 7px;
     padding: 13px 16px; border-radius: 10px;
@@ -385,6 +402,90 @@
     </div>
   </header>
 
+  <!-- WIDGET — TOP -->
+  <div class="widget-inline">
+    <div class="ws-title">Купить скипасс</div>
+    <div class="ws-sub">Выберите курорт — перейдёте к калькулятору цен и покупке</div>
+    <div class="resort-cards">
+
+      <div class="rc">
+        <div class="rc-head">
+          <div class="rc-dot" style="background:var(--rk)"></div>
+          <div class="rc-name">Роза Хутор</div>
+        </div>
+        <div class="rc-photo">
+          <img src="https://s3.rosakhutor.ru/upload/slv.seo/8b3/1lijl137w45z5yvsvxkqxnpvkjdlonwj/rosa_khutor_summer.jpg" alt="Роза Хутор — горнолыжный курорт Сочи" loading="lazy" />
+        </div>
+        <div class="rc-prices">
+          <div class="rc-price-row">
+            <span class="rc-price-label">Прогулочный</span>
+            <span class="rc-price-val main">от&nbsp;2&nbsp;200&nbsp;₽</span>
+          </div>
+          <div class="rc-divider"></div>
+          <div class="rc-price-row">
+            <span class="rc-price-label">Скипасс 1 день</span>
+            <span class="rc-price-val">от&nbsp;4&nbsp;500&nbsp;₽</span>
+          </div>
+        </div>
+        <a href="/rosa.html" class="rc-btn rk">
+          Выбрать билет
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="rc">
+        <div class="rc-head">
+          <div class="rc-dot" style="background:var(--kp)"></div>
+          <div class="rc-name">Красная Поляна</div>
+        </div>
+        <div class="rc-photo">
+          <img src="assets/photo-kp.webp" alt="Курорт Красная Поляна — панорама" loading="lazy" />
+        </div>
+        <div class="rc-prices">
+          <div class="rc-price-row">
+            <span class="rc-price-label">Прогулочный</span>
+            <span class="rc-price-val main">от&nbsp;1&nbsp;500&nbsp;₽</span>
+          </div>
+          <div class="rc-divider"></div>
+          <div class="rc-price-row">
+            <span class="rc-price-label">Скипасс 1 день</span>
+            <span class="rc-price-val">от&nbsp;3&nbsp;800&nbsp;₽</span>
+          </div>
+        </div>
+        <a href="/kp.html" class="rc-btn kp">
+          Выбрать билет
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="rc">
+        <div class="rc-head">
+          <div class="rc-dot" style="background:var(--gz)"></div>
+          <div class="rc-name">Газпром</div>
+        </div>
+        <div class="rc-photo">
+          <img src="assets/photo-gz.webp" alt="Курорт Газпром — горы Сочи" loading="lazy" />
+        </div>
+        <div class="rc-prices">
+          <div class="rc-price-row">
+            <span class="rc-price-label">Весь день взрослый</span>
+            <span class="rc-price-val main">1&nbsp;250&nbsp;₽</span>
+          </div>
+          <div class="rc-divider"></div>
+          <div class="rc-price-row">
+            <span class="rc-price-label">Скипасс 1 день</span>
+            <span class="rc-price-val">от&nbsp;3&nbsp;300&nbsp;₽</span>
+          </div>
+        </div>
+        <a href="/gz.html" class="rc-btn gz">
+          Выбрать билет
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
   <!-- BODY -->
   <article class="article-body">
 
@@ -443,7 +544,91 @@
 
     <div class="infobox">
       <strong>Единый скипасс</strong>
-      Есть единый скипасс на все три курорта — от 3 300 ₽/день. Удобно если хотите за один день попробовать разные склоны. Продаётся в кассах на месте.
+      Есть единый скипасс на все три курорта — от&nbsp;3&nbsp;300&nbsp;₽/день. Удобно если хотите за один день попробовать разные склоны. Продаётся в кассах на месте.
+    </div>
+
+    <!-- WIDGET — MIDDLE -->
+    <div class="widget-inline">
+      <div class="ws-title">Купить скипасс</div>
+      <div class="ws-sub">Выберите курорт — перейдёте к калькулятору цен и покупке</div>
+      <div class="resort-cards">
+
+        <div class="rc">
+          <div class="rc-head">
+            <div class="rc-dot" style="background:var(--rk)"></div>
+            <div class="rc-name">Роза Хутор</div>
+          </div>
+          <div class="rc-photo">
+            <img src="https://s3.rosakhutor.ru/upload/slv.seo/8b3/1lijl137w45z5yvsvxkqxnpvkjdlonwj/rosa_khutor_summer.jpg" alt="Роза Хутор — горнолыжный курорт Сочи" loading="lazy" />
+          </div>
+          <div class="rc-prices">
+            <div class="rc-price-row">
+              <span class="rc-price-label">Прогулочный</span>
+              <span class="rc-price-val main">от&nbsp;2&nbsp;200&nbsp;₽</span>
+            </div>
+            <div class="rc-divider"></div>
+            <div class="rc-price-row">
+              <span class="rc-price-label">Скипасс 1 день</span>
+              <span class="rc-price-val">от&nbsp;4&nbsp;500&nbsp;₽</span>
+            </div>
+          </div>
+          <a href="/rosa.html" class="rc-btn rk">
+            Выбрать билет
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="rc">
+          <div class="rc-head">
+            <div class="rc-dot" style="background:var(--kp)"></div>
+            <div class="rc-name">Красная Поляна</div>
+          </div>
+          <div class="rc-photo">
+            <img src="assets/photo-kp.webp" alt="Курорт Красная Поляна — панорама" loading="lazy" />
+          </div>
+          <div class="rc-prices">
+            <div class="rc-price-row">
+              <span class="rc-price-label">Прогулочный</span>
+              <span class="rc-price-val main">от&nbsp;1&nbsp;500&nbsp;₽</span>
+            </div>
+            <div class="rc-divider"></div>
+            <div class="rc-price-row">
+              <span class="rc-price-label">Скипасс 1 день</span>
+              <span class="rc-price-val">от&nbsp;3&nbsp;800&nbsp;₽</span>
+            </div>
+          </div>
+          <a href="/kp.html" class="rc-btn kp">
+            Выбрать билет
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="rc">
+          <div class="rc-head">
+            <div class="rc-dot" style="background:var(--gz)"></div>
+            <div class="rc-name">Газпром</div>
+          </div>
+          <div class="rc-photo">
+            <img src="assets/photo-gz.webp" alt="Курорт Газпром — горы Сочи" loading="lazy" />
+          </div>
+          <div class="rc-prices">
+            <div class="rc-price-row">
+              <span class="rc-price-label">Весь день взрослый</span>
+              <span class="rc-price-val main">1&nbsp;250&nbsp;₽</span>
+            </div>
+            <div class="rc-divider"></div>
+            <div class="rc-price-row">
+              <span class="rc-price-label">Скипасс 1 день</span>
+              <span class="rc-price-val">от&nbsp;3&nbsp;300&nbsp;₽</span>
+            </div>
+          </div>
+          <a href="/gz.html" class="rc-btn gz">
+            Выбрать билет
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
     </div>
 
     <h2>Роза Хутор — самый большой и дорогой</h2>
@@ -520,19 +705,22 @@
           <div class="rc-dot" style="background:var(--rk)"></div>
           <div class="rc-name">Роза Хутор</div>
         </div>
+        <div class="rc-photo">
+          <img src="https://s3.rosakhutor.ru/upload/slv.seo/8b3/1lijl137w45z5yvsvxkqxnpvkjdlonwj/rosa_khutor_summer.jpg" alt="Роза Хутор — горнолыжный курорт Сочи" loading="lazy" />
+        </div>
         <div class="rc-prices">
           <div class="rc-price-row">
             <span class="rc-price-label">Прогулочный</span>
-            <span class="rc-price-val main">от 2 200 ₽</span>
+            <span class="rc-price-val main">от&nbsp;2&nbsp;200&nbsp;₽</span>
           </div>
           <div class="rc-divider"></div>
           <div class="rc-price-row">
             <span class="rc-price-label">Скипасс 1 день</span>
-            <span class="rc-price-val">от 4 500 ₽</span>
+            <span class="rc-price-val">от&nbsp;4&nbsp;500&nbsp;₽</span>
           </div>
           <div class="rc-price-row">
             <span class="rc-price-label">Детский (до 14 л)</span>
-            <span class="rc-price-val">от 2 700 ₽</span>
+            <span class="rc-price-val">от&nbsp;2&nbsp;700&nbsp;₽</span>
           </div>
         </div>
         <p class="rc-note">Оплата картой без регистрации. Билеты на email.</p>
@@ -548,19 +736,22 @@
           <div class="rc-dot" style="background:var(--kp)"></div>
           <div class="rc-name">Красная Поляна</div>
         </div>
+        <div class="rc-photo">
+          <img src="assets/photo-kp.webp" alt="Курорт Красная Поляна — панорама посёлка и горы" loading="lazy" />
+        </div>
         <div class="rc-prices">
           <div class="rc-price-row">
             <span class="rc-price-label">Прогулочный</span>
-            <span class="rc-price-val main">от 1 500 ₽</span>
+            <span class="rc-price-val main">от&nbsp;1&nbsp;500&nbsp;₽</span>
           </div>
           <div class="rc-divider"></div>
           <div class="rc-price-row">
             <span class="rc-price-label">Скипасс 1 день</span>
-            <span class="rc-price-val">от 3 800 ₽</span>
+            <span class="rc-price-val">от&nbsp;3&nbsp;800&nbsp;₽</span>
           </div>
           <div class="rc-price-row">
             <span class="rc-price-label">Детский (до 14 л)</span>
-            <span class="rc-price-val">от 2 200 ₽</span>
+            <span class="rc-price-val">от&nbsp;2&nbsp;200&nbsp;₽</span>
           </div>
         </div>
         <p class="rc-note">Оплата картой без регистрации. Билеты на email.</p>
@@ -576,19 +767,22 @@
           <div class="rc-dot" style="background:var(--gz)"></div>
           <div class="rc-name">Газпром (Лаура)</div>
         </div>
+        <div class="rc-photo">
+          <img src="assets/photo-gz.webp" alt="Курорт Газпром — отели на фоне снежных гор" loading="lazy" />
+        </div>
         <div class="rc-prices">
           <div class="rc-price-row">
             <span class="rc-price-label">Весь день взрослый</span>
-            <span class="rc-price-val main">1 250 ₽</span>
+            <span class="rc-price-val main">1&nbsp;250&nbsp;₽</span>
           </div>
           <div class="rc-divider"></div>
           <div class="rc-price-row">
             <span class="rc-price-label">Вечерний</span>
-            <span class="rc-price-val">1 000 ₽</span>
+            <span class="rc-price-val">1&nbsp;000&nbsp;₽</span>
           </div>
           <div class="rc-price-row">
             <span class="rc-price-label">Детский</span>
-            <span class="rc-price-val">850 ₽</span>
+            <span class="rc-price-val">850&nbsp;₽</span>
           </div>
         </div>
         <p class="rc-note">Нужен аккаунт Газпром ID. Регистрация ~2 мин.</p>
