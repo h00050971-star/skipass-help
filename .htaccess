@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Всё → https://skipass.help (убираем www и форсируем HTTPS)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.skipass\.help [NC]
+RewriteRule ^(.*)$ https://skipass.help/$1 [L,R=301]
